@@ -1,103 +1,182 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import styles from './page.module.css';
+
+const featuredCategories = [
+  {
+    name: 'Party Wear',
+    description: 'Stunning dresses and suits for your special occasions',
+    image: '/images/party-wear.jpg',
+    href: '/collection/party-wear',
+  },
+  {
+    name: 'Ethnic Wear',
+    description: 'Traditional elegance for cultural celebrations',
+    image: '/images/ethnic-wear.jpg',
+    href: '/collection/ethnic-wear',
+  },
+  {
+    name: 'Western Looks',
+    description: 'Contemporary fashion for the modern you',
+    image: '/images/western-looks.jpg',
+    href: '/collection/western-looks',
+  },
+];
+
+const howItWorks = [
+  {
+    title: 'Choose Your Style',
+    description: 'Browse our curated collection and find the perfect outfit',
+    icon: '👗',
+  },
+  {
+    title: 'Book Your Dates',
+    description: 'Select your rental period and reserve your items',
+    icon: '📅',
+  },
+  {
+    title: 'Try & Wear',
+    description: 'Receive your outfit and look fabulous for your event',
+    icon: '✨',
+  },
+  {
+    title: 'Return with Love',
+    description: 'Simply return the items in the provided packaging',
+    icon: '💝',
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        {/* Background Image */}
+        <div className={styles.heroBackground}>
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="Fashion rental hero image"
+            fill
+            className={styles.heroImage}
+            priority
+          />
+          <div className={styles.overlay}></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Hero Content */}
+        <div className={styles.heroContent}>
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className={styles.heroTextContent}
+            >
+              <h1 className={styles.heroTitle}>
+                Look Fabulous.
+                <br />
+                <span className={styles.heroHighlight}>Without the Fuss.</span>
+              </h1>
+              <p className={styles.heroSubtitle}>
+                GlamOnRent offers premium fashion pieces for any occasion. Experience luxury without commitment.
+              </p>
+              <div className={styles.heroActions}>
+                <Link
+                  href="/collection"
+                  className="btn-primary"
+                >
+                  Explore Collection
+                  <ArrowRightIcon className={styles.buttonIcon} />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Categories */}
+      <section className={styles.featuredSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              Featured Collections
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              Discover our most popular rental categories
+            </p>
+          </div>
+
+          <div className={styles.categoriesGrid}>
+            {featuredCategories.map((category) => (
+              <motion.div
+                key={category.name}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+                className={styles.categoryCard}
+              >
+                <div className={styles.categoryImageContainer}>
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className={styles.categoryImage}
+                  />
+                </div>
+                <h3 className={styles.categoryTitle}>
+                  {category.name}
+                </h3>
+                <p className={styles.categoryDescription}>{category.description}</p>
+                <Link
+                  href={category.href}
+                  className={styles.categoryLink}
+                >
+                  View Collection
+                  <ArrowRightIcon className={styles.linkIcon} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className={styles.howItWorksSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              How It Works
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              Renting with us is simple and hassle-free
+            </p>
+          </div>
+
+          <div className={styles.stepsGrid}>
+            {howItWorks.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={styles.stepCard}
+              >
+                <div className={styles.stepIcon}>
+                  {step.icon}
+                </div>
+                <h3 className={styles.stepTitle}>
+                  {step.title}
+                </h3>
+                <p className={styles.stepDescription}>{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

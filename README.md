@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GlamOnRent - Premium Fashion Rental
 
-## Getting Started
+GlamOnRent is a modern fashion rental website built with Next.js, offering premium clothing and accessories for various occasions.
 
-First, run the development server:
+## Features
+
+- Responsive design that works on all devices
+- Beautiful UI with Cormorant Garamond and Montserrat fonts
+- Collection browsing with filtering options
+- Detailed product pages
+- Lookbook gallery
+- FAQ section
+- Contact form
+- How It Works explanation
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- CSS Modules
+- Framer Motion for animations
+- Hero Icons and React Icons
+- GitHub Pages for hosting
+
+## Deployment
+
+This project is configured for deployment to GitHub Pages using GitHub Actions.
+
+### Setting up GitHub Pages
+
+1. Push your code to GitHub in a new repository
+2. Go to your repository settings
+3. Navigate to "Pages" section
+4. Under "Build and deployment", select "GitHub Actions" as the source
+5. The workflow will automatically build and deploy when you push to the main branch
+
+### Manual Deployment
+
+You can also build and deploy manually:
 
 ```bash
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
+# The static files will be in the 'out' directory
+# You can deploy these files to any static hosting service
+```
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Images
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All images should be placed in the `/public/images` directory. See `image-requirements.md` for detailed image specifications.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Design inspired by modern fashion rental platforms
+- Built with ❤️ by GlamOnRent team

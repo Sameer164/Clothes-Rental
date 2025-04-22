@@ -1,0 +1,211 @@
+.container {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #f8f9fa;
+  background-image: linear-gradient(to right, rgba(244, 63, 94, 0.05), rgba(244, 63, 94, 0.02));
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-family: var(--font-playfair);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Steps Section */
+.stepsSection {
+  padding: 5rem 0;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stepImageContainer {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.stepImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(244, 63, 94, 0.3);
+}
+
+.stepContent {
+  padding: 2rem;
+}
+
+.stepTitle {
+  font-family: var(--font-playfair);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.stepDescription {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.stepDetailsList {
+  list-style: none;
+  padding: 0;
+}
+
+.stepDetailItem {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.stepDetailItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+/* FAQ Section */
+.faqSection {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.sectionTitle {
+  font-family: var(--font-playfair);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.faqItem {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faqQuestion {
+  font-family: var(--font-playfair);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.faqAnswer {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-playfair);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.ctaDescription {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .stepCard {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  .stepImageContainer {
+    flex: 0 0 40%;
+    height: auto;
+  }
+  
+  .stepContent {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stepImageContainer {
+    flex: 0 0 33%;
+  }
+} 

@@ -1,0 +1,158 @@
+.container {
+  min-height: 100vh;
+}
+
+.header {
+  padding: 8rem 0 4rem;
+  background-color: #f8f9fa;
+  background-image: linear-gradient(to right, rgba(244, 63, 94, 0.05), rgba(244, 63, 94, 0.02));
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.content {
+  padding: 5rem 0;
+}
+
+.faqContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.categoryButton {
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.categoryButton:hover {
+  color: var(--primary);
+}
+
+.activeCategory {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.questionsContainer {
+  padding: 2rem;
+}
+
+.faqItem {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #f1f1f1;
+}
+
+.questionButton {
+  width: 100%;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.3s;
+}
+
+.questionButton:hover {
+  background-color: #f9f9f9;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.rotateIcon {
+  transform: rotate(180deg);
+}
+
+.answerContainer {
+  padding: 0 1.25rem;
+  overflow: hidden;
+}
+
+.answer {
+  padding-bottom: 1.25rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.contactCta {
+  max-width: 600px;
+  margin: 4rem auto 0;
+  text-align: center;
+  padding: 3rem;
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+}
+
+.contactCta h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.contactCta p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 640px) {
+  .categories {
+    flex-direction: column;
+  }
+  
+  .categoryButton {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f1f1;
+    border-left: 3px solid transparent;
+  }
+  
+  .activeCategory {
+    border-bottom-color: #f1f1f1;
+    border-left-color: var(--primary);
+  }
+  
+  .questionsContainer {
+    padding: 1.25rem;
+  }
+} 
