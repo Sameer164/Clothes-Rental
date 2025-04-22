@@ -4,10 +4,10 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/rental_business' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/Clothes-Rental' : '',
   trailingSlash: true,
   // Add assetPrefix for GitHub Pages
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/rental_business' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Clothes-Rental' : '',
 };
 
 module.exports = nextConfig;

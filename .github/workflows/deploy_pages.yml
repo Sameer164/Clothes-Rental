@@ -37,7 +37,13 @@ jobs:
         
       - name: Create .nojekyll file
         run: touch out/.nojekyll
+        
+      - name: Debug - List build output directory
+        run: ls -la out/
       
+      - name: Copy index.html to root
+        run: cp out/index.html out/404.html
+        
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -60,6 +66,9 @@ jobs:
         with:
           name: github-pages
           path: ./out
+          
+      - name: Debug - List downloaded files
+        run: ls -la ./out/
           
       - name: Deploy to GitHub Pages
         id: deployment
