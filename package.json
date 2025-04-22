@@ -1,13 +1,14 @@
 {
   "name": "rental_business",
   "version": "0.1.0",
+  "homepage": "https://sameer164.github.io/Clothes-Rental",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "clean": "rm -rf .next node_modules/.cache",
     "build": "npm run clean && next build",
-    "export": "next export",
-    "deploy": "npm run build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to GitHub Pages\" && git subtree push --prefix out origin gh-pages",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
   },
@@ -28,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
+    "gh-pages": "^6.3.0",
     "typescript": "^5"
   }
 }
