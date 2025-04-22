@@ -6,6 +6,8 @@ const nextConfig = {
   },
   basePath: process.env.NODE_ENV === 'production' ? '/rental_business' : '',
   trailingSlash: true,
+  // Add assetPrefix for GitHub Pages
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/rental_business' : '',
 };
 
 module.exports = nextConfig;
