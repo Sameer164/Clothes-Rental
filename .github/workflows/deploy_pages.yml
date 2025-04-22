@@ -41,8 +41,14 @@ jobs:
       - name: Debug - List build output directory
         run: ls -la out/
       
-      - name: Copy index.html to root
-        run: cp out/index.html out/404.html
+      - name: Copy root index.html to out directory
+        run: cp index.html out/ || echo "Root index.html not found"
+        
+      - name: Create index.html at root of out directory
+        run: |
+          if [ ! -f out/index.html ]; then
+            echo "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Clothes Rental</title><meta http-equiv=\"refresh\" content=\"0;url=/Clothes-Rental/index.html\" /></head><body>Redirecting...</body></html>" > out/index.html
+          fi
         
       - name: Upload artifact
         uses: actions/upload-artifact@v4
